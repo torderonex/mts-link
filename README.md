@@ -2,9 +2,14 @@
 # Развёртывание приложения
 
 Данный проект включает в себя серверную часть на Go и клиентскую часть на React. Следуйте инструкциям ниже для развёртывания приложения.
+
 **Данные для входа:
 Login: kholkin@mts.ru
 Password: admin111**
+
+Сайт на хостинге:https://bejewelled-semifreddo-24e261.netlify.app/
+Видео результат:https://drive.google.com/file/d/18FlU0Z2LEO0gIluMRmYq-l2L1t0w3GEg/view?usp=drive_link
+
 ## Требования
 - **Node.js**: версия 18 или выше
 - **npm**: версия 8 или выше
