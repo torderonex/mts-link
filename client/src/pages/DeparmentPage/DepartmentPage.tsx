@@ -6,67 +6,63 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const DepartmentPage: React.FC = () => {
-    const { id } = useParams<{ id: string }>();
-    const [status, setStatus] = useState<
-        "idle" | "loading" | "success" | "error"
-    >("idle");
+  const { id } = useParams<{ id: string }>();
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
-    const [department, setDepartment] = useState<Department | null>(null);
+  const [department, setDepartment] = useState<Department | null>(null);
 
-    useEffect(() => {
-        const fetchDepartment = async () => {
-            if (!id) return;
+  useEffect(() => {
+    const fetchDepartment = async () => {
+      if (!id) return;
 
-            setStatus("loading");
+      setStatus("loading");
 
-            try {
-                const { data } = await DepartmentService.getOneDepartmentById(
-                    id
-                );
-                console.log(data);
-                setDepartment(data);
-                setStatus("success");
-            } catch (error) {
-                console.error(error);
-                setStatus("error");
-            }
-        };
+      try {
+        const { data } = await DepartmentService.getOneDepartmentById(id);
+        console.log(data);
+        setDepartment(data);
+        setStatus("success");
+      } catch (error) {
+        console.error(error);
+        setStatus("error");
+      }
+    };
 
-        fetchDepartment();
-    }, [id]);
+    fetchDepartment();
+  }, [id]);
 
-    useEffect(() => {
-        const preventScroll = (e: WheelEvent) => {
-            e.preventDefault();
-        };
+  useEffect(() => {
+    const preventScroll = (e: WheelEvent) => {
+      e.preventDefault();
+    };
 
-        document.addEventListener("wheel", preventScroll, { passive: false });
+    document.addEventListener("wheel", preventScroll, { passive: false });
 
-        // Убираем обработчик при размонтировании
-        return () => {
-            document.removeEventListener("wheel", preventScroll);
-        };
-    }, []);
+    // Убираем обработчик при размонтировании
+    return () => {
+      document.removeEventListener("wheel", preventScroll);
+    };
+  }, []);
 
-    if (status === "loading") {
-        return <Spinner />;
-    }
+  if (status === "loading") {
+    return <Spinner />;
+  }
 
-    if (status === "error") {
-        return <div>Произошла ошибка.</div>;
-    }
+  if (status === "error") {
+    return <div>Произошла ошибка.</div>;
+  }
 
-    return (
-        <div className="mt-5 overflow-y-hidden">
-            {status === "success" && department ? (
-                <OrgChart department={department} />
-            ) : (
-                <div className="text-center">
-                    Нет информации о департаменте.
-                </div>
-            )}
-        </div>
-    );
+  return (
+    <div className=" overflow-y-hidden">
+      {status === "success" && department ? (
+        <OrgChart department={department} />
+      ) : (
+        <div className="text-center">Нет информации о департаменте.</div>
+      )}
+    </div>
+  );
 };
 
 export default DepartmentPage;

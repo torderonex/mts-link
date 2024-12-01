@@ -7,7 +7,7 @@ const Layout: React.FC = () => {
   return (
     <div className=" w-full">
       <Header />
-      <main className=" w-full">
+      <main className=" w-full bg-background">
         <Outlet />
       </main>
       <Footer />

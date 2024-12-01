@@ -51,16 +51,18 @@ const MemberPage: React.FC = () => {
     <div className="py-10 px-2 flex items-center justify-center  min-h-[699px]">
       {status === "success" && member ? (
         <div>
-          <h1 className="text-2xl font-bold mb-5">Информация о Пользователе</h1>
+          <h1 className="text-2xl text-foreground font-bold mb-5">
+            Информация о Пользователе
+          </h1>
           <Link
             to={`/department/${member.team.departmentID}`}
-            className="underline flex gap-4 mb-2 items-center "
+            className="underline text-foreground flex gap-4 mb-2 items-center "
           >
             <ArrowLeft size={15} /> Вернуться к департаменту
           </Link>
           <Link
             to={`/teams/${member.team.id}`}
-            className="underline flex gap-4 mb-10 items-center "
+            className="underline text-foreground flex gap-4 mb-10 items-center "
           >
             <ArrowLeft size={15} /> Вернуться к команде
           </Link>

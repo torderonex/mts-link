@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import AppRoutes from "./AppRoutes";
 import useUserStore from "./store/user-store";
+import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
   const { checkAuth, isAuth } = useUserStore();
@@ -11,7 +12,11 @@ function App() {
     }
   }, [checkAuth, isAuth]);
 
-  return <AppRoutes />;
+  return (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <AppRoutes />
+    </ThemeProvider>
+  );
 }
 
 export default App;

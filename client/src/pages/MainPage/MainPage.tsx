@@ -69,7 +69,9 @@ const MainPage: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center flex-col py-20 container min-h-[699px] max-w-[1310px] px-[15px] w-full mx-auto h-full">
-      <h1 className="text-3xl font-bold">Список всех департаментов</h1>
+      <h1 className="text-3xl font-bold text-foreground">
+        Список всех департаментов
+      </h1>
 
       <div className="flex justify-between w-[100%] mb-[50px] mt-14">
         <DepartmentsSelect

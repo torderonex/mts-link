@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function MemberInfo({ member }: { member: Member }) {
   console.log(member);
   return (
-    <div className="w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
+    <div className="w-full max-w-4xl mx-auto bg-card border border-muted-foreground shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
       <div className="flex-1 p-6">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">
           {member.fullname}
@@ -43,7 +43,7 @@ export default function MemberInfo({ member }: { member: Member }) {
         </ul>
       </div>
 
-      <div className="flex-1 p-6 flex flex-col items-center justify-center bg-gray-100 border-l border-gray-300">
+      <div className="flex-1 p-6 flex flex-col items-center justify-center bg-card border-l border-muted-foreground">
         <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-gray-200 mb-4">
           <img
             src={member.photoURL || "/pfp.png"}

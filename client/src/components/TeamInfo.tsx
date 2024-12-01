@@ -43,14 +43,14 @@ export default function TeamInfo({ team }: TeamInfoProps) {
         <div className="px-6 pt-2 pb-6">
             <Link
                 to={`/department/${team.departmentID}`}
-                className="underline flex gap-4 mb-10 items-center "
+                className="underline flex gap-4 mb-10 items-center text-foreground "
             >
                 <ArrowLeft size={15} /> Вернуться к департаменту
             </Link>
             <h1 className="text-2xl font-bold mb-5">{team.departmentName}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white shadow-md rounded-lg p-4">
-                    <h2 className="text-xl font-semibold mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+                <div className="bg-card shadow-md rounded-lg p-4 border border-muted-foreground">
+                    <h2 className="text-xl font-semibold mb-2 text-foreground">
                         Аналитика участников
                     </h2>
                     <BarChart
@@ -73,23 +73,33 @@ export default function TeamInfo({ team }: TeamInfoProps) {
                     </BarChart>
                 </div>
 
-                <div className="bg-white shadow-md rounded-lg p-4">
-                    <h2 className="text-xl font-semibold mb-2">
+                <div className="bg-card shadow-md rounded-lg p-4 border border-muted-foreground">
+                    <h2 className="text-xl text-foreground font-semibold mb-2">
                         Список участников
                     </h2>
                     <Table className="w-full">
                         <TableHeader>
                             <TableRow>
-                                <TableCell>Имя</TableCell>
-                                <TableCell>Роль</TableCell>
-                                <TableCell>Детали</TableCell>
+                                <TableCell className="text-foreground">
+                                    Имя
+                                </TableCell>
+                                <TableCell className="text-foreground">
+                                    Роль
+                                </TableCell>
+                                <TableCell className="text-foreground">
+                                    Детали
+                                </TableCell>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {members.members.map((m) => (
                                 <TableRow key={m.id}>
-                                    <TableCell>{m.fullname}</TableCell>
-                                    <TableCell>{m.role}</TableCell>
+                                    <TableCell className="text-foreground">
+                                        {m.fullname}
+                                    </TableCell>
+                                    <TableCell className="text-foreground">
+                                        {m.role}
+                                    </TableCell>
                                     <TableCell>
                                         <Link
                                             to={`/member/${m.id}`}

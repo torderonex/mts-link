@@ -3,7 +3,7 @@ import { FaTelegramPlane, FaVk, FaYoutube } from "react-icons/fa";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="min-h-[150px] border-t pb-4 border-[rgb(151,160,168)] pt-4 flex items-center justify-center flex-col">
+    <footer className="min-h-[150px] border-t  pb-4 border-foreground-muted pt-4 flex items-center justify-center flex-col bg-destructive-foreground">
       <p className="max-w-[800px] text-center mb-4 text-[rgb(151,160,168)] text-sm">
         Платформа .find создана специально для компании МТС Линк, чтобы повысить
         прозрачность и эффективность организации. Наше инновационное
