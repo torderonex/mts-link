@@ -8,6 +8,7 @@ Login: kholkin@mts.ru
 Password: admin111**
 
 Сайт на хостинге:https://bejewelled-semifreddo-24e261.netlify.app/
+
 Видео результат:https://drive.google.com/file/d/18FlU0Z2LEO0gIluMRmYq-l2L1t0w3GEg/view?usp=drive_link
 
 ## Требования
